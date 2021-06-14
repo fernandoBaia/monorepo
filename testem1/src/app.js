@@ -6,7 +6,7 @@ const port = 3333
 app.use(responseTime())
 
 app.get('/', async (req, res) => {
-    res.send('service 1 - teste')
+    res.send('service 1 - teste host')
 })
 
 app.listen(port, () => {
