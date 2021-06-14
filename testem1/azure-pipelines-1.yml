@@ -1,11 +1,16 @@
 name: $(date:yyyyMMdd)$(rev:.r)
+resources:
+  repositories:
+  - repository: self
+    type: git
+    ref: main
 trigger:
   branches:
     include:
       - main
   paths:
     include:
-      - 'testem1/*'
+      - 'service-a/*'
 jobs:
 - job: Job_1
   displayName: Agent job 1
@@ -38,3 +43,4 @@ jobs:
       TargetFolder: $(Build.ArtifactStagingDirectory)
   - task: PublishBuildArtifacts@1
     displayName: 'Publish Artifact: drop'
+...
