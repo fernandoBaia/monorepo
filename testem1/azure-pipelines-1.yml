@@ -10,7 +10,7 @@ trigger:
       - main
   paths:
     include:
-      - 'service-a/*'
+      - 'testem1/*'
 jobs:
 - job: Job_1
   displayName: Agent job 1
