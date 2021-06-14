@@ -4,8 +4,7 @@ name: $(BuildID)
 trigger:
   branches:
     include:
-      - master
-      - feat/*
+      - main
   paths:
     include:
       - 'testem2/*'

@@ -1,18 +1,14 @@
 name: $(date:yyyyMMdd)$(rev:.r)
-
 trigger:
   branches:
     include:
-      - master
-      - feat/*
+      - main
   paths:
     exclude:
       - 'testem1/*'
       - 'testem2/*'
-
 pool:
   vmImage: 'ubuntu-16.04'
-
 steps:
   - script: |
       echo "Hello from '/' root folder."
