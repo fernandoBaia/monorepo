@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: testem2-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: testem2
+  template:
+    metadata:
+      labels:
+        app: testem2
+    spec:
+      containers:
+      - name: testem2
+        image: acrtestem.azurecr.io/testem2:v1
+        ports:
+        - containerPort: 3333
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: testem2-loadbalancer
+  annotations:
+    service.beta.kubernetes.io/azure-load-balancer-internal: "false"
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 3333
+  selector:
+    app: testem2

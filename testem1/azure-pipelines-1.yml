@@ -1,0 +1,40 @@
+name: $(date:yyyyMMdd)$(rev:.r)
+trigger:
+  branches:
+    include:
+      - master
+  paths:
+    include:
+      - 'testem1/*'
+jobs:
+- job: Job_1
+  displayName: Agent job 1
+  pool:
+    vmImage: ubuntu-16.04
+  steps:
+  - checkout: self
+  - task: Docker@0
+    displayName: Build an image
+    inputs:
+      azureSubscriptionEndpoint: 2e54811f-3917-4449-96da-fdd76b95f21b
+      azureContainerRegistry: '{"loginServer":"acrtestem.azurecr.io", "id" : "/subscriptions/8faf7993-44a9-4bdd-830c-94c3238af4fd/resourceGroups/teste-mono/providers/Microsoft.ContainerRegistry/registries/acrtestem"}'
+      dockerFile: Dockerfile
+      imageName: testem1
+      additionalImageTags: $(Build.BuildId)
+      includeLatestTag: true
+  - task: Docker@0
+    displayName: Push an image
+    inputs:
+      azureSubscriptionEndpoint: 2e54811f-3917-4449-96da-fdd76b95f21b
+      azureContainerRegistry: '{"loginServer":"acrtestem.azurecr.io", "id" : "/subscriptions/8faf7993-44a9-4bdd-830c-94c3238af4fd/resourceGroups/teste-mono/providers/Microsoft.ContainerRegistry/registries/acrtestem"}'
+      action: Push an image
+      imageName: testem1
+      additionalImageTags: $(Build.BuildId)
+      includeLatestTag: true
+  - task: CopyFiles@2
+    displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
+    inputs:
+      Contents: deployment.yml
+      TargetFolder: $(Build.ArtifactStagingDirectory)
+  - task: PublishBuildArtifacts@1
+    displayName: 'Publish Artifact: drop'
