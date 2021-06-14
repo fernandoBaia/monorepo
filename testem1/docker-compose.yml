@@ -1,0 +1,8 @@
+version: '3'
+services:
+    testem1:
+        build: .
+        image: testem1
+        container_name: testem1
+        ports:
+            - '3333:3333'
