@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="1" failures="1" errors="0" time="0.485">
-  <testsuite name="Teste app" errors="0" failures="1" skipped="0" timestamp="2021-08-26T18:43:10" time="0.402" tests="1">
-    <testcase classname="Teste app it should ok" name="Teste app it should ok" time="0.006">
+<testsuites name="jest tests" tests="1" failures="1" errors="0" time="0.972">
+  <testsuite name="Teste app" errors="0" failures="1" skipped="0" timestamp="2021-08-26T19:04:57" time="0.295" tests="1">
+    <testcase classname="Teste app it should ok" name="Teste app it should ok" time="0.005">
       <failure>Error: expect(received).toBe(expected) // Object.is equality
 
 Expected: &quot;with error&quot;

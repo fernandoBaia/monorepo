@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "node src/app.js",
-    "test": "jest --reporters=default --reporters=jest-junit"
+    "test": "jest --reporters=default --reporters=jest-junit --coverage --coverageReporters=cobertura"
   },
   "dependencies": {
     "axios": "^0.21.1",
