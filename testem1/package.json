@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "node src/app.js",
-    "test": "jest"
+    "test": "jest --reporters=default --reporters=jest-junit"
   },
   "dependencies": {
     "axios": "^0.21.1",
@@ -9,6 +9,7 @@
     "response-time": "^2.3.2"
   },
   "devDependencies": {
-    "jest": "^27.0.6"
+    "jest": "^27.0.6",
+    "jest-junit": "^12.2.0"
   }
 }
