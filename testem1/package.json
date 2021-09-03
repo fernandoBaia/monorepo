@@ -4,6 +4,7 @@
     "test": "jest --reporters=default --reporters=jest-junit --coverage --coverageReporters=cobertura"
   },
   "dependencies": {
+    "applicationinsights": "^2.1.6",
     "axios": "^0.21.1",
     "express": "^4.17.1",
     "response-time": "^2.3.2"
