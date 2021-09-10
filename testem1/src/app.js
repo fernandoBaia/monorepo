@@ -16,7 +16,7 @@ appInsights
   .setAutoCollectDependencies(true)
   .setAutoCollectConsole(true, true)
   .setUseDiskRetryCaching(true)
-  .setSendLiveMetrics(false)
+  .setSendLiveMetrics(true)
   .setDistributedTracingMode(appInsights.DistributedTracingModes.AI_AND_W3C)
   .start();
 
