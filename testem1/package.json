@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "node src/app.js",
-    "test": "jest --reporters=default --reporters=jest-junit --coverage --coverageReporters=cobertura"
+    "test": "jest"
   },
   "dependencies": {
     "applicationinsights": "^2.1.6",
