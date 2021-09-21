@@ -1,1 +1,1 @@
-config-release
+config-main
