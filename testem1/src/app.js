@@ -24,7 +24,7 @@ app.get('/', async (req, res) => {
   logger.info('info log');
   logger.warn('warn log');
   logger.error('error log');
-  res.send('service 1 -- update teste task:2');
+  res.send('service 1 -- task:2');
 });
 
 app.listen(port, () => {
