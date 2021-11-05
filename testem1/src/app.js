@@ -24,6 +24,7 @@ app.get('/', async (req, res) => {
   logger.info('info log');
   logger.warn('warn log');
   logger.error('error log');
+  //oi
   res.send('service 1 - task:3 Fixes');
 });
 
