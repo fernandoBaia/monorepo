@@ -25,6 +25,7 @@ app.get('/', async (req, res) => {
   logger.warn('warn log');
   logger.error('error log');
   //Task teste 1
+  //Task teste 2
   res.send('service 1');
 });
 
